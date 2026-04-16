@@ -263,12 +263,21 @@ if forecast_data and forecast_data.get("status") == "success":
             hovermode="x unified"
         )
 
-        # Add vertical line for now
-        now_str = datetime.utcnow().isoformat()
-        fig.add_vline(
-            x=now_str,
-            line_dash="dash", line_color="#FFD700",
-            annotation_text="Now", annotation_position="top"
+       # Add vertical line for now
+        fig.add_shape(
+            type="line",
+            x0=datetime.utcnow().isoformat(),
+            x1=datetime.utcnow().isoformat(),
+            y0=0, y1=1,
+            yref="paper",
+            line=dict(color="#FFD700", width=2, dash="dash")
+        )
+        fig.add_annotation(
+            x=datetime.utcnow().isoformat(),
+            y=1, yref="paper",
+            text="Now", showarrow=False,
+            font=dict(color="#FFD700", size=11),
+            yanchor="bottom"
         )
 
         st.plotly_chart(fig, use_container_width=True)
