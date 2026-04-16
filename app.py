@@ -264,8 +264,9 @@ if forecast_data and forecast_data.get("status") == "success":
         )
 
         # Add vertical line for now
-        x=datetime.utcnow().isoformat(),
-            x=datetime.utcnow(),
+        now_str = datetime.utcnow().isoformat()
+        fig.add_vline(
+            x=now_str,
             line_dash="dash", line_color="#FFD700",
             annotation_text="Now", annotation_position="top"
         )
