@@ -70,7 +70,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ── Config ─────────────────────────────────────────────────────────────────
-FORECAST_API = "https://verdant-forecast-api.onrender.com"
+FORECAST_API = "https://api.verdant.evervia.co.uk"
 SUPABASE_URL = st.secrets["SUPABASE_URL"]
 SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 
